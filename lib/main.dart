@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './question.dart';
+import './questionBank.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,22 +15,23 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var _questionIndex = 0;
+  var questions = ["cat", "dog"];
+  var options = [
+    ["cat", "dog", "bear", "pig"],
+    ["cat", "dog", "bear", "pig"],
+  ];
 
-  void _answerQuestion() {
+  var _questionNumber = 0;
+
+  void _answerQuestion(String option) {
     setState(() {
-      _questionIndex = _questionIndex + 1;
+      _questionNumber = _questionNumber + 1;
     });
-    print(_questionIndex);
+    //  print(_questionIndex);
   }
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
-      "What's your favourite colour?",
-      "What's your favourite animal?"
-    ];
-
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -51,7 +53,9 @@ class _MyAppState extends State<MyApp> {
                         children: <Widget>[
                           Container(
                             padding: const EdgeInsets.all(4),
-                            child: Image.asset('assets/images/Cat.png'),
+                            child: Image.asset('assets/images/' +
+                                questions[_questionNumber] +
+                                '.png'),
                           ),
                           Container(
                             padding: const EdgeInsets.all(4),
@@ -77,9 +81,11 @@ class _MyAppState extends State<MyApp> {
                             backgroundColor:
                                 MaterialStateProperty.all<Color>(Colors.yellow),
                           ),
-                          onPressed: () {},
-                          child: const Text(
-                            'cat',
+                          onPressed: () {
+                            _answerQuestion(options[_questionNumber][0]);
+                          },
+                          child: Text(
+                            options[_questionNumber][0],
                             style: TextStyle(
                               fontSize: 40.0,
                               color: Colors.black,
@@ -94,9 +100,11 @@ class _MyAppState extends State<MyApp> {
                             backgroundColor:
                                 MaterialStateProperty.all<Color>(Colors.blue),
                           ),
-                          onPressed: () {},
-                          child: const Text(
-                            'dog',
+                          onPressed: () {
+                            _answerQuestion(options[_questionNumber][1]);
+                          },
+                          child: Text(
+                            options[_questionNumber][1],
                             style: TextStyle(
                               fontSize: 40.0,
                               color: Colors.black,
@@ -111,9 +119,11 @@ class _MyAppState extends State<MyApp> {
                             backgroundColor:
                                 MaterialStateProperty.all<Color>(Colors.red),
                           ),
-                          onPressed: () {},
-                          child: const Text(
-                            'bear',
+                          onPressed: () {
+                            _answerQuestion(options[_questionNumber][2]);
+                          },
+                          child: Text(
+                            options[_questionNumber][2],
                             style: TextStyle(
                               fontSize: 40.0,
                               color: Colors.black,
@@ -128,9 +138,11 @@ class _MyAppState extends State<MyApp> {
                             backgroundColor:
                                 MaterialStateProperty.all<Color>(Colors.green),
                           ),
-                          onPressed: () {},
-                          child: const Text(
-                            'pig',
+                          onPressed: () {
+                            _answerQuestion(options[_questionNumber][3]);
+                          },
+                          child: Text(
+                            options[_questionNumber][3],
                             style: TextStyle(
                               fontSize: 40.0,
                               color: Colors.black,
