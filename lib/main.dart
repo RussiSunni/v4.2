@@ -18,14 +18,15 @@ class _MyAppState extends State<MyApp> {
   var questions = ["cat", "dog"];
   var options = [
     ["cat", "dog", "bear", "pig"],
-    ["cat", "dog", "bear", "pig"],
+    ["duck", "frog", "dog", "cat"],
   ];
-
   var _questionNumber = 0;
 
   void _answerQuestion(String option) {
     setState(() {
-      _questionNumber = _questionNumber + 1;
+      if (option == questions[_questionNumber]) {
+        _questionNumber = _questionNumber + 1;
+      }
     });
     //  print(_questionIndex);
   }
