@@ -40,37 +40,103 @@ class _MyAppState extends State<MyApp> {
           children: [
             Expanded(
                 child: Container(
-              color: Colors.black,
-            )),
+                    color: Colors.black,
+                    child: GridView.count(
+                        primary: false,
+                        padding: const EdgeInsets.all(0),
+                        crossAxisSpacing: 0,
+                        mainAxisSpacing: 0,
+                        crossAxisCount: 2,
+                        childAspectRatio: (1 / 1.45),
+                        children: <Widget>[
+                          Container(
+                            padding: const EdgeInsets.all(4),
+                            child: Image.asset('assets/images/Cat.png'),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(4),
+                            child:
+                                Image.asset('assets/images/FairyNeutral.png'),
+                          ),
+                        ]))),
             Expanded(
               child: Container(
                   color: Colors.black,
                   child: GridView.count(
                     primary: false,
-                    padding: const EdgeInsets.all(5),
-                    crossAxisSpacing: 5,
-                    mainAxisSpacing: 5,
+                    padding: const EdgeInsets.all(0),
+                    crossAxisSpacing: 0,
+                    mainAxisSpacing: 0,
                     crossAxisCount: 2,
+                    childAspectRatio: (3 / 2.1),
                     children: <Widget>[
                       Container(
-                        padding: const EdgeInsets.all(8),
-                        child: const Text("cat"),
-                        color: Colors.yellow[100],
+                        padding: const EdgeInsets.all(4),
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(Colors.yellow),
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            'cat',
+                            style: TextStyle(
+                              fontSize: 40.0,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
                       ),
                       Container(
-                        padding: const EdgeInsets.all(8),
-                        child: const Text('dog'),
-                        color: Colors.blue[100],
+                        padding: const EdgeInsets.all(4),
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(Colors.blue),
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            'dog',
+                            style: TextStyle(
+                              fontSize: 40.0,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
                       ),
                       Container(
-                        padding: const EdgeInsets.all(8),
-                        child: const Text('bear'),
-                        color: Colors.red[100],
+                        padding: const EdgeInsets.all(4),
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(Colors.red),
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            'bear',
+                            style: TextStyle(
+                              fontSize: 40.0,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
                       ),
                       Container(
-                        padding: const EdgeInsets.all(8),
-                        child: const Text('pig'),
-                        color: Colors.green[100],
+                        padding: const EdgeInsets.all(4),
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(Colors.green),
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            'pig',
+                            style: TextStyle(
+                              fontSize: 40.0,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   )),
